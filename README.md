@@ -1,0 +1,2 @@
+# QDU_Python2024
+青岛大学2024年zdj老师python实验课作业
