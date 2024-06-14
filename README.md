@@ -2,7 +2,7 @@
 青岛大学2024年zdj老师python实验课作业
 
 ## 24_1.1
-    '''python
+    ```python
     定义函数 drawdouble(n, i)
         n1 = n / 2
         a = (180 * (n - 2) / n)
@@ -39,21 +39,21 @@
         调用 drawsingle(n)
     否则
         调用 drawdouble(n, i)
-    '''
+    ```
 
 ## 24_1.2
-    '''python
+    ```python
     从 turtle 导入所有功能
         重复 100 次，计数变量 i 从 0 到 99
             设置海龟的朝向为 90 * i + 90 度
             前进 10 + 5 * i 的距离
         结束重复
         完成绘图
-    '''
+    ```
 
 ## 24_2
 
-    '''python
+    ```python
     定义函数 koch(size, n)
         如果 n 等于 0
             向前移动 size
@@ -81,40 +81,40 @@
         结束绘图
     结束函数
     调用 main()
-    '''
+    ```
 
 ## 24_3
 
-    '''python
+    ```python
     导入 jieba 库
     从 wordcloud 导入 WordCloud
-    打开文件 '24_3/关于实施乡村振兴的意见.txt'，使用 'utf-8' 编码读取
+    打开文件 `24_3/关于实施乡村振兴的意见.txt`，使用 `utf-8` 编码读取
         读取文件内容到变量 text 中
     关闭文件
     # 使用 jieba 进行中文分词
     将 text 进行分词，结果存入变量 words
     将 words 中的词用空格连接成字符串
     创建词云对象 wordcloud，参数如下：
-        字体路径为 '/usr/share/fonts/truetype/droid/    DroidSansFallbackFull.ttf'
+        字体路径为 `/usr/share/fonts/truetype/droid/    DroidSansFallbackFull.ttf`
         宽度为 800 像素
         高度为 400 像素
         背景颜色为白色
         生成词云图，使用 words 作为输入
     # 保存词云图
-    将词云图保存到文件 '24_3/wordcloud.png'
+    将词云图保存到文件 `24_3/wordcloud.png`
     # 显示词云图
     导入 matplotlib.pyplot 库并命名为 plt
-    使用 plt 显示词云图，插值方式为 'bilinear'
+    使用 plt 显示词云图，插值方式为 `bilinear`
     关闭坐标轴显示
     显示图像
-    '''
+    ```
 
 
 ## 24_4
 
 ### 24_4
 
-    '''python
+    ```python
     导入必要的库
     从 os 导入 pipe
     从 matplotlib.offsetbox 导入 DrawingArea
@@ -137,12 +137,12 @@
     train_loader = DataLoader(train_set,    batch_size=BATCH_SIZE, shuffle=True, num_workers=16)
     test_loader = DataLoader(test_set, batch_size=BATCH_SIZE,   shuffle=True, num_workers=16)
     # 显示 MNIST 中的图片
-    打开文件 './data/MNIST/raw/t10k-images-idx3-ubyte' 并读取内容
+    打开文件 `./data/MNIST/raw/t10k-images-idx3-ubyte` 并读取内容
     将文件内容转换为整数列表 image1，从偏移 16 开始，长度为 784
     打印 image1
     将 image1 转换为 numpy 数组 image1_np，数据类型为 uint8，形状为     28x28x1
     打印 image1_np 的形状
-    使用 OpenCV 保存 image1_np 为图像文件 '24_4/digit.jpg'
+    使用 OpenCV 保存 image1_np 为图像文件 `24_4/digit.jpg`
     # 构建神经网络模型
     定义类 Digit 继承自 nn.Module
         定义初始化方法
@@ -194,15 +194,15 @@
         调用 train_model 训练模型
         调用 test_model 测试模型
     # 保存模型到文件
-    定义模型保存路径 model_save_path 为 'model.pth'
+    定义模型保存路径 model_save_path 为 `model.pth`
     保存模型状态字典到 model_save_path
     打印模型已保存的信息
-    '''
+    ```
 
 ### 24_4_apl
 这是针对静态图像的应用示例
 
-    '''python
+    ```python
     导入必要的库
     从 cv2 导入
     从 numpy 导入
@@ -214,7 +214,7 @@
     设置设备 DEVICE 为 GPU 如果可用，否则为 CPU
     # 加载训练好的模型
     初始化 Digit 模型，并将其移动到 DEVICE
-    加载模型参数 state_dict 从 'model.pth'
+    加载模型参数 state_dict 从 `model.pth`
     将模型设置为评估模式
     # 图片预处理函数
     定义函数 preprocess_image(image_path)
@@ -234,16 +234,16 @@
         返回预测结果
     结束函数
     # 进行图片预处理和预测
-    定义图片路径 image_path 为 'OIP-C.jpeg'
+    定义图片路径 image_path 为 `OIP-C.jpeg`
     调用 preprocess_image 函数对图片进行预处理，得到 image_tensor
     调用 predict 函数进行预测，得到 predicted_digit
     打印预测结果
-    '''
+    ```
 
 ### 24_4_video
 这是针对视频的使用示例
 
-    '''python
+    ```python
     导入必要的库
     从 cv2 导入
     从 torch 导入
@@ -254,7 +254,7 @@
     设置设备 DEVICE 为 GPU 如果可用，否则为 CPU
     # 加载训练好的模型
     初始化 Digit 模型，并将其移动到 DEVICE
-    加载模型参数 state_dict 从 'model.pth'
+    加载模型参数 state_dict 从 `model.pth`
     将模型设置为评估模式
     # 图片预处理函数
     定义函数 preprocess_image(img)
@@ -286,4 +286,4 @@
     结束循环
     释放摄像头 cap
     关闭所有 OpenCV 窗口
-    '''
+    ```
