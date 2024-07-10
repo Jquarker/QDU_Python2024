@@ -3,18 +3,19 @@ from os import pipe
 from matplotlib.offsetbox import DrawingArea
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
+import torch.nn.functional as F #激活函数
 import torch.optim as opt
 from torchvision import datasets,transforms
 from torch import optim
 #下载数据集库引入
 from torch.utils.data import DataLoader
 
+# from torch import d2l
 
 #定义超参数()
 BATCH_SIZE = 256    #小批量梯度下降
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")     #choose CPU or GPU
-EPOCHS = 100    #训练轮次
+EPOCHS = 10    #训练轮次
 #构建pipeline
 pipeline = transforms.Compose([
     transforms.ToTensor(), #将图片转换成tensor(容器)
